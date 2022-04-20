@@ -78,7 +78,7 @@ function initApp() {
         liff.getProfile().then(profile => {
             const userDisplayName = profile.displayName;
             console.info("User name is", userDisplayName);
-            document.getElementById("greet").innerHTML = "Hi, " + userDisplayName+" ";
+            document.getElementById("greet").innerHTML = "Hi, " + userDisplayName +"- ";
         }).catch((err) => {
             console.error("LIFF getProfile failed", err);
         });
@@ -126,13 +126,13 @@ function initContent(type) {
     if (type == "text") {
         element.className = "form-label-group";
         element.id = "data";
-        type = "text";
-        id = "text";
+        input.type = "text";
+        input.id = "text";
         input.className = "form-control";
         input.placeholder = "Text message";
         input.required = false;
         if (getParameterByName("text")) {
-            value = getParameterByName("text");
+            input.value = getParameterByName("text");
         }
         label.htmlFor = "text";
         label.innerHTML = "Text message";
