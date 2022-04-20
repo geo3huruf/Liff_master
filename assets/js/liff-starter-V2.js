@@ -126,19 +126,20 @@ function initContent(type) {
     if (type == "text") {
         element.className = "form-label-group";
         element.id = "data";
-        input.type = "text";
-        input.id = "text";
+        type = "text";
+        id = "text";
         input.className = "form-control";
         input.placeholder = "Text message";
         input.required = false;
         if (getParameterByName("text")) {
-            input.value = getParameterByName("text");
+            value = getParameterByName("text");
         }
         label.htmlFor = "text";
         label.innerHTML = "Text message";
         element.appendChild(input);
         element.appendChild(label);
         parent.insertBefore(element, parent.childNodes[4]);
+
     } else if (type == "sticker" || type == "stickerimage") {
         element.className = "form-label-group";
         element.id = "data";
