@@ -130,7 +130,7 @@ function initContent(type) {
         input.id = "text";
         input.className = "form-control";
         input.placeholder = "Text message";
-        input.required = true;
+        input.required = false;
         if (getParameterByName("text")) {
             input.value = getParameterByName("text");
         }
